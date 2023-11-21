@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from flask import Flask, render_template, Blueprint
 from flask_caching import Cache
 import feedparser
@@ -6,7 +7,7 @@ app = Flask(__name__)
 cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 news_feeds_3 = [ 'https://www.annapolis.gov/RSSFeed.aspx?ModID=1&CID=Headlines-12', ]
 news_feeds_2 = [ 'http://rss.cnn.com/rss/edition.rss', 'http://feeds.bbci.co.uk/news/world/rss.xml', 'https://www.reuters.com/tools/rss', ]
-news_feeds_1 = [ 'http://nakedsecurity.sophos.com/feed/', 'https://www.cisa.gov/news.xml', 'https://feeds.feedburner.com/TheHackersNews', 'http://krebsonsecurity.com/feed/', 'http://www.bleepingcomputer.com/feed/', 'http://cybermashup.com/feed/', ]
+news_feeds_1 = [ 'https://www.darkreading.com/rss.xml', 'http://nakedsecurity.sophos.com/feed/', 'https://www.cisa.gov/news.xml', 'https://feeds.feedburner.com/TheHackersNews', 'http://krebsonsecurity.com/feed/', 'http://www.bleepingcomputer.com/feed/', 'http://cybermashup.com/feed/', ]
 
 @cache.cached(timeout=3600)  # Cache for 1 hour
 def fetch_news_feeds(news_feeds):
