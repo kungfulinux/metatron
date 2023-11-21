@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Metatron Annapolis Local News Aggregator</title>
+</head>
+<body>
+    <h1>Metatron Annapolis Local News Aggregator</h1>
+    <ul>
+        {% for feed in feeds %}
+            <li><a href="{{ feed.link }}">{{ feed.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
